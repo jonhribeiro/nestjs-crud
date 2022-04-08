@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    depends_on:
+      - db
+    restart: always
+    build: .
+    ports:
+      - "8080:3000"
+    volumes:
+      - .:/usr/app
+    networks: 
+      - internal
+
+  db:
+    image: mongo:5.0
+    restart: unless-stopped
+    volumes:
+      - ./.docker/mongodb/dbdata:/data/db
+    ports:
+      - "27017:27017"
+    networks: 
+      - internal
+
+networks: 
+    internal:
+        driver: bridge
