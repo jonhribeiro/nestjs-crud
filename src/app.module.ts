@@ -4,6 +4,7 @@ import { JogadoresModule } from './jogadores/jogadores.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { UnidadesModule } from './unidades/unidades.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { UserModule } from './user/user.module';
     JogadoresModule,
     CategoriasModule,
     UnidadesModule,
-    UserModule
+    UserModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],
