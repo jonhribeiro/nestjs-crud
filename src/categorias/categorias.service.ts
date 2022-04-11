@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { CategoriaDocument } from 'src/schemas/categoria.schema';
 import { CreateCategoriaDto } from './dto/create-categoria.dto';
 import { UpdateCategoriaDto } from './dto/update-categoria.dto';
 import { Categoria } from './entities/categoria.entity';
@@ -9,7 +8,7 @@ import { Categoria } from './entities/categoria.entity';
 @Injectable()
 export class CategoriasService {
 
-  constructor(@InjectModel(Categoria.name) private categoriaModel: Model<CategoriaDocument>) {}
+  constructor(@InjectModel('Categoria') private readonly categoriaModel: Model<Categoria>) {} 
 
   create(createCategoriaDto: CreateCategoriaDto) {
     const user = new this.categoriaModel(createCategoriaDto)
