@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { JogadoresModule } from './jogadores/jogadores.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { UnidadesModule } from './unidades/unidades.module';
-import { PrismaModule } from './prisma/prisma.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -11,7 +11,7 @@ import { PrismaModule } from './prisma/prisma.module';
     JogadoresModule,
     CategoriasModule,
     UnidadesModule,
-    PrismaModule
+    UserModule
   ],
   controllers: [],
   providers: [],
